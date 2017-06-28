@@ -7,7 +7,7 @@
 </div>
 
 
-<form (ngSubmit)="checkGuess()"  #jeopardyForm="ngForm" class="form-horizontal" *ngFor="let r of random">
+<form (ngSubmit)="checkGuess()"  #randomForm="ngForm" class="form-horizontal">
   <!--<input [(ngModel)]="answer" type="hidden" name="answer" value={{r.answer}}>-->
   <div class="form-group">
     <label for="score" class="col-sm-2 control-label">Score:</label>
@@ -19,21 +19,21 @@
   <div class="form-group">
     <label for="category" class="col-sm-2 control-label">Category:</label>
     <div class="col-sm-10">
-      <h2 class="form-control" id="category" name="category">{{r.category.title}}</h2>
+      <h2 class="form-control" id="category" name="category">{{random?.category?.title}}</h2>
     </div>
   </div>
 
   <div class="form-group">
     <label for="value" class="col-sm-2 control-label">Point Value:</label>
     <div class="col-sm-10">
-      <h2 class="form-control" id="value" name="value">{{r.value}}</h2>
+      <h2 class="form-control" id="value" name="value">{{random?.value}}</h2>
     </div>
   </div>
 
   <div class="form-group">
     <label for="question" class="col-sm-2 control-label">Question:</label>
     <div class="col-sm-10">
-      <h2 class="form-control" id="question" name="question">{{r.question}}</h2>
+      <h2 class="form-control" id="question" name="question">{{random?.question}}</h2>
     </div>
   </div>
 

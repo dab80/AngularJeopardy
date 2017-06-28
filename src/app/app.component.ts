@@ -29,18 +29,18 @@ export class AppComponent {
     this.JeopardyService.getRecords('random')
       .subscribe(
         random => { // same as function(random)
-          // this.random = random[0];
-          this.random = random;
+          this.random = random[0];
+          // this.random = random;
           console.log(this.random);
-          console.log('The correct answer is ' + this.random[0].answer);
+          console.log('The correct answer is ' + this.random.answer);
 
           // -- check for null point value and set to 300, if null
-          if (this.random[0].value == null) {
-            this.random[0].value = 300;
+          if (this.random.value == null) {
+            this.getQuestion();
             console.log('Null value was detected');
           }
-          // this.answer = this.random[0].answer;
-          // this.successMessage = 'Got the stuff';
+          this.answer = this.random.answer;
+          this.successMessage = 'Got the stuff';
         },
         error => { // same as function(error)
           this.errorMessage = < any > error;
@@ -58,9 +58,11 @@ export class AppComponent {
 
     // this.answer = this.random[0].answer;
 
-      if (this.guess === this.random[0].answer) {
+      if (this.guess === this.random.answer) {
         // tslint:disable-next-line:radix
-        this.score = this.score + parseInt(this.random[0].value);
+        console.log('You are correct');
+        
+        this.score = this.score + parseInt(this.random.value);
       }
 
       // --reset the guess to clear the display
