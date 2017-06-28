@@ -13,17 +13,14 @@ import {
 })
 export class AppComponent {
   title = 'Jeopardy';
-  random: any;
-  errorMessage: string;
+  random: any = {};
+    errorMessage: string;
   successMessage: string;
-  guess: string;
+  // guess: string;
   answer: string;
-  // tslint:disable-next-line:no-inferrable-types
-  score: number = 0;
 
-  constructor(private JeopardyService: JeopardyapiService) {
+  constructor(private JeopardyService: JeopardyapiService) {}
 
-  }
   // -- subscribe is similar to a promise.done
   getQuestion() {
     this.JeopardyService.getRecords('random')
@@ -51,24 +48,6 @@ export class AppComponent {
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnInit() {
     this.getQuestion();
-  }
-
-  checkGuess() {
-    console.log('The guess was ' + this.guess);
-
-    // this.answer = this.random[0].answer;
-
-      if (this.guess === this.random.answer) {
-        // tslint:disable-next-line:radix
-        console.log('You are correct');
-        
-        this.score = this.score + parseInt(this.random.value);
-      }
-
-      // --reset the guess to clear the display
-      this.guess = '';
-
-      this.getQuestion();
   }
 
 }
