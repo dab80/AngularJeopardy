@@ -1,31 +1,24 @@
 
-<form (ngSubmit)="checkGuess()"  #randomForm="ngForm" class="form-horizontal">
-  <!--<input [(ngModel)]="answer" type="hidden" name="answer" value={{r.answer}}>-->
-  <div class="form-group">
-    <label for="score" class="col-sm-2 control-label">Score:</label>
-    <div class="col-sm-10">
-      <h2 class="form-control" id="score" name="score">{{score}}</h2>
-    </div>
-  </div>
+<form (ngSubmit)="checkGuess()" #theQuestionForm="ngForm" class="form-horizontal">
 
   <div class="form-group">
     <label for="category" class="col-sm-2 control-label">Category:</label>
     <div class="col-sm-10">
-      <h2 class="form-control" id="category" name="category">{{random?.category?.title}}</h2>
+      <h2 class="form-control" id="category" name="category">{{theQuestion?.category?.title}}</h2>
     </div>
   </div>
 
   <div class="form-group">
     <label for="value" class="col-sm-2 control-label">Point Value:</label>
     <div class="col-sm-10">
-      <h2 class="form-control" id="value" name="value">{{random?.value}}</h2>
+      <h2 class="form-control" id="value" name="value">{{theQuestion?.value}}</h2>
     </div>
   </div>
 
   <div class="form-group">
     <label for="question" class="col-sm-2 control-label">Question:</label>
     <div class="col-sm-10">
-      <h2 class="form-control" id="question" name="question">{{random?.question}}</h2>
+      <h2 class="form-control" id="question" name="question">{{theQuestion?.question}}</h2>
     </div>
   </div>
 
@@ -41,6 +34,6 @@
       <button type="submit" class="btn btn-primary">Guess</button>
     </div>
   </div>
+  
 </form>
-
 

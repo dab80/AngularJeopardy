@@ -19,8 +19,8 @@ export class JeopardyapiService {
 
   getRecords(endpoint: string): Observable < any > {
     const apiUrl = `${this.baseUrl}${endpoint}`;
-    console.log(apiUrl);
-    
+    // console.log(apiUrl);
+
     return this.http.get(apiUrl)
       .map(this.extractData)
       .catch(this.handleError);

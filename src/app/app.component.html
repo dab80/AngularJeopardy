@@ -1,13 +1,18 @@
 <!--The whole content below can be removed with the new code.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-  
+  <h1>Welcome to {{title}}!</h1>
+
+  <h2>Score:</h2>
+
+  <h2 id="score_val" name="score">{{score}}</h2>
 </div>
-<!--<div class="container">
-  <router-outlet></router-outlet>
-</div>-->
 
-<app-question (onGuess)="getQuestion()" [random]='random'></app-question>
+<div hidden>
+  displayCategory = {{displayCategory}}
+</div>
 
+<!--The following is the selector for where we moved the html-->
+
+<app-question *ngIf="displayCategory == 0" (onGuess)="get3Categories($event)" [theQuestion]='theQuestion'></app-question>
+
+<app-category *ngIf="displayCategory == 1" (onCategory)="getQuestion($event)" [categories]='categories'></app-category>

@@ -1,20 +1,34 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms' // -- allows for 2 way data binding
+import {
+  BrowserModule
+} from '@angular/platform-browser';
+import {
+  NgModule
+} from '@angular/core';
+import {
+  HttpModule
+} from '@angular/http';
+import {
+  FormsModule
+} from '@angular/forms'; // -- allows for 2 way data binding
 
-import { AppComponent } from './app.component';
-import { JeopardyapiService } from './jeopardyapi.service'
-import { QuestionComponent } from './question/question.component';
-import { ScoreComponent } from './score/score.component';
-import { GuessComponent } from './guess/guess.component';
+import {
+  AppComponent
+} from './app.component';
+import {
+  JeopardyapiService
+} from './jeopardyapi.service'
+import {
+  QuestionComponent
+} from './question/question.component';
+import {
+  CategoryComponent
+} from './category/category.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionComponent,
-    ScoreComponent,
-    GuessComponent
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -26,4 +40,4 @@ import { GuessComponent } from './guess/guess.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
